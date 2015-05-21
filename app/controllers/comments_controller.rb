@@ -16,12 +16,6 @@ class CommentsController < ApplicationController
         redirect_to root_url
     end
     
-    def destroy
-        @comment.delete
-        flash[:success] = "Comment Deleted"
-        redirect_to root_url
-    end
-    
     private
     
     def comment_params
