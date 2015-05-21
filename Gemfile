@@ -39,10 +39,10 @@ gem 'spring',        group: :development
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
-group :devlopment, :test do
-  gem 'sqlite3'
+group :development do
+   gem 'sqlite3'
 end
 
-group :production do
-  gem 'pg'
+group :test, :production do
+    gem 'pg'
 end
