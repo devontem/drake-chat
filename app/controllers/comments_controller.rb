@@ -5,10 +5,13 @@ class CommentsController < ApplicationController
     end
     
     def index
-       render text: "hi" 
+        #/comments pages
+       redirect_to root_url 
     end
     
     def show
+        #/comments/:id page
+        #@post = Post.find(params[:id])
         redirect_to root_url
     end
     
