@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
     def new 
-       @comment = Comment.new
+       @comment = Comment.new #prepares a new comment to be made
        @comments = Comment.order('created_at DESC')
     end
     
     def create
         if current_user
-           @comment = current_user.comments.build(comment_params)
+           @comment = current_user.comments.new(comment_params) #creates a new comment for the current_user
             if @comment.save
                flash[:success] = 'Your comment was successfully posted!'
             else
@@ -19,6 +19,6 @@ class CommentsController < ApplicationController
     private
     
     def comment_params
-        params.require(:comment).permit(:body)
+        params.require(:comment).permit(:body) #returns a copy of a 'comment' only with the outlined keys
     end
 end
