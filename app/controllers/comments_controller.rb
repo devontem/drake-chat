@@ -4,6 +4,10 @@ class CommentsController < ApplicationController
        @comments = Comment.order('created_at DESC')
     end
     
+    def show
+        
+    end
+    
     def create
         if current_user
            @comment = current_user.comments.new(comment_params) #creates a new comment for the current_user
