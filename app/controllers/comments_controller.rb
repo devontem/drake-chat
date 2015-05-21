@@ -17,8 +17,9 @@ class CommentsController < ApplicationController
     end
     
     def destroy
-        @post = Comment.find(params[:id])
-        @post.destroy
+        Comment.find(params[:id]).destroy
+        flash[:success] = "User destroyed."
+        redirect_to root_url
     end
     
     private
