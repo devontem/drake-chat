@@ -4,6 +4,10 @@ class CommentsController < ApplicationController
        @comments = Comment.order('created_at DESC')
     end
     
+    def index
+       render text: "hi" 
+    end
+    
     def show
         redirect_to root_url
     end
