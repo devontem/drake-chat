@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     def destroy
         cookies.delete(:user_id)
         flash[:success] = "Take Care! #NWTS"
+        redirect_to root_url
     end
     
     def auth_fail
