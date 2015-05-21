@@ -9,9 +9,9 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
       
-      add index :users, :uid
-      add_index :users, :provider
-      add_index :users, [:uid, :provider], unique: true
+      # add_index :users, :uid
+      # add_index :users, :provider
+      # add_index :users, [:uid, :provider], unique: true
     end
   end
 end
