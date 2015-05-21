@@ -18,7 +18,7 @@
 @import 'bootstrap/theme';
 
 .social {
-  background: url(image-path('logo.png')) no-repeat transparent;
+  background: url(asset-path('logo.png')) no-repeat transparent;
   display: inline-block;
   &.twitter {
     width: 50px;
