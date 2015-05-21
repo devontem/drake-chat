@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     end
     
     def show
-        
+        redirect_to root_url
     end
     
     def create
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     def destroy
         @comment = Comment.find(params[:id])
         @comment.destroy
-        flash[:success] = "Comment destroyed."
+        flash[:success] = "Comment Deleted!"
         redirect_to root_url
     end
     
