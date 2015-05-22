@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'jquery-turbolinks'
 
 group :development do
    gem 'sqlite3'

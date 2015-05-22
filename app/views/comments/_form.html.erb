@@ -1,8 +1,8 @@
 <div class="well">
-  <%= form_for @comment do |f| %>
+  <%= form_for @commen, remote: true do |f| %>
     <div class="form-group">
       <%= f.label :body, 'Enter your comment:' %>
-      <%= f.text_area :body, rows: 3, class: 'form-control', required: true, maxlength: 2000 %>
+      <%= f.text_field :body, rows: 3, class: 'form-control', required: true, maxlength: 2000 %>
       <small class="label label-warning">Cannot be blank or contain more than 2000 symbols.</small>
     </div>
  

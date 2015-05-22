@@ -16,15 +16,21 @@ class CommentsController < ApplicationController
     end
     
     def create
-        if current_user
-           @comment = current_user.comments.new(comment_params) #creates a new comment for the current_user
-            if @comment.save
-               flash[:success] = 'Your comment was successfully posted!'
+        respond_to |format|
+            if current_user
+               @comment = current_user.comments.new(comment_params) #creates a new comment for the current_user
+                if @comment.save
+                   flash[:success] = 'Your comment was successfully posted!'
+                else
+                    flash[:error] = "Your comment cannot be saved."
+                end
+                format.html {redirect_to root_url}
+                format.js
             else
-                flash[:error] = "Your comment cannot be saved."
+                format.html
+                format.js {render nothing: true}
             end
         end
-        redirect_to root_url
     end
     
     def destroy
