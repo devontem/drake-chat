@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'comments#new'
   
   #creates CRUD for :comments, but ONLY new() and create() 
-  resources :comments
+  resources :comments, only: [:new, :create]
   
   #routes for session controller
   get '/auth/:provider/callback', to: 'sessions#create'
