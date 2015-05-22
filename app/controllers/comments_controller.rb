@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     end
     
     def index
+        @comments = Comment.order('created_at DESC'
         #/comments pages
     #   redirect_to root_url 
     end
