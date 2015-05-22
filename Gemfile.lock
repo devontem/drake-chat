@@ -186,7 +186,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
-  faye-rails
+  faye-rails (~> 2.0)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
@@ -201,4 +201,5 @@ DEPENDENCIES
   sqlite3
   thin
   turbolinks
+  tzinfo-data
   uglifier (>= 1.3.0)

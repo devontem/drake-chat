@@ -35,13 +35,19 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'bootstrap-sass'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'jquery-turbolinks'
-gem 'faye-rails'
-gem 'thin'
+gem 'jquery-rails'
+gem 'turbolinks'
 
+gem 'thin'
+gem 'faye-rails', '~> 2.0'
+
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
+gem 'bootstrap-sass'
+gem 'jquery-turbolinks'
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
 group :development do
    gem 'sqlite3'
 end
