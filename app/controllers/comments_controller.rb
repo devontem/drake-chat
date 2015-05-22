@@ -15,41 +15,24 @@ class CommentsController < ApplicationController
         redirect_to root_url
     end
     
-    # def create
-    #     respond_to |format|
-    #         if current_user
-    #           @comment = current_user.comments.new(comment_params) #creates a new comment for the current_user
-    #             if @comment.save
-    #               flash[:success] = 'Your comment was successfully posted!'
-    #             else
-    #                 flash[:error] = "Your comment cannot be saved."
-    #             end
-    #             format.html {redirect_to root_url}
-    #             format.js
-    #         else
-    #             format.html
-    #             format.js {render nothing: true} #doesn't load the js from create.js.erb
-    #         end
-    #     end
-    # end
-    
     def create
-      respond_to do |format|
-        if current_user
-          @comment = current_user.comments.build(comment_params)
-          if @comment.save
-            flash.now[:success] = 'Your comment was successfully posted!'
-          else
-            flash.now[:error] = 'Your comment cannot be saved.'
-          end
-          format.html {redirect_to root_url}
-          format.js
-        else
-          format.html {redirect_to root_url}
-          format.js {render nothing: true}
+        respond_to do |format|
+            if current_user
+              @comment = current_user.comments.new(comment_params) #creates a new comment for the current_user
+                if @comment.save
+                  flash[:success] = 'Your comment was successfully posted!'
+                else
+                    flash[:error] = "Your comment cannot be saved."
+                end
+                format.html {redirect_to root_url}
+                format.js
+            else
+                format.html
+                format.js {render nothing: true} #doesn't load the js from create.js.erb
+            end
         end
-      end
     end
+    
     
     def destroy
         @comment = Comment.find(params[:id])

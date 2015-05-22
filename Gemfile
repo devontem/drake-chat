@@ -39,6 +39,8 @@ gem 'bootstrap-sass'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'jquery-turbolinks'
+gem 'faye-rails'
+gem 'thin'
 
 group :development do
    gem 'sqlite3'
