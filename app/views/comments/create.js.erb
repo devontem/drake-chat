@@ -1,4 +1,4 @@
-publisher = client.publish('/comments', {
+var publisher = client.publish('/comments', {
   message: '<%= j render @comment %>'
 });
 
