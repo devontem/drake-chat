@@ -4,16 +4,6 @@ class CommentsController < ApplicationController
        @comments = Comment.order('created_at DESC')
     end
     
-    def index
-        #/comments pages
-    #   redirect_to root_url 
-    end
-    
-    def show
-        #/comments/:id page
-        #@post = Post.find(params[:id])
-        redirect_to root_url
-    end
     
     def create
         respond_to do |format|
