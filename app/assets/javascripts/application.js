@@ -15,3 +15,14 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require polling
+
+$(function () {
+  if ($('#comments').length > 0) {
+    setTimeout(updateComments, 10000);
+  }
+});
+
+function updateComments() {
+  $.getScript('/comments.js');
+  setTimeout(updateComments, 10000);
+}
